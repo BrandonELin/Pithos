@@ -1,4 +1,14 @@
 const Log = require('../models/coffee')
+const mongoose = require('mongoose')
+const Schema = mongoose.Schema
+const coffeeSelectionSchema = new Schema({
+    type: { type: String, required: true }, 
+    roast: { type: String},
+    wholeBean: {type: Boolean}, 
+    description: {type: String}
+}
+)
+const coffeeLog = mongoose.model('CoffeeLog', coffeeSelectionSchema)
 const seed = require('../models/seed')
 
 const express = require('express')
@@ -6,11 +16,11 @@ const express = require('express')
 const router = express.Router()
 
 router.get('/', (req, res) => {  
-    Log.find({}, (err, foundLog) => {
+    coffeeLog.find({}, (err, foundLog) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('Index', { coffee: foundLog })
+            res.status(200).render('Index', { coffees: foundLog })
         }
     })
 })
@@ -29,21 +39,21 @@ router.post('/', (req, res) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).redirect('/coffee')
+            res.status(200).redirect('/')
         }
     })
 })
 
 router.get('/seed', (req, res) => {
-    Coffee.deleteMany({}, (err, deletedLogs) => {
+    coffeeLog.deleteMany({}, (err, deletedSelections) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            Log.create(seed, (err, createdLog) => {
+            coffeeLog.create(seed, (err, createdSelections) => {
                 if (err) {
                     res.status(400).json(err)
                 } else {
-                    res.status(200).redirect('/coffee')
+                    res.status(200).redirect('/')
                 }
             })
         }
@@ -51,8 +61,7 @@ router.get('/seed', (req, res) => {
 })
 
 router.get('/:id', (req, res) => {
-    Log.findById(req.params.id, (err, foundLog) => {
-        console.coffee(foundLog.createdAt)
+    coffeeLog.findById(req.params.id, (err, foundLog) => {
         if (err) {
             res.status(400).json(err)
         } else {
@@ -73,12 +82,6 @@ router.get('/:id/edit', (req, res) => {
 
 router.put('/:id', (req, res) => {
 
-    if (req.body.shipIsBroken === "on") {
-        req.body.shipIsBroken = true
-    } else {
-        req.body.shipIsBroken = false
-    }
-
     Log.findByIdAndUpdate(req.params.id, req.body, (err, foundLog) => {
         if (err) {
             res.status(400).json(err)
@@ -95,7 +98,7 @@ router.delete('/:id', (req, res) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).redirect('/coffee')
+            res.status(200).redirect('/')
         }
     })
 })

@@ -10,7 +10,7 @@ class DefaultLayout extends React.Component {
                 </head>
                 <body>
                     <nav>
-                        <a href={`/coffee`}>eXpresso</a>
+                        <a className = 'navigation' href={`/coffee`}>eXpresso</a>
                     </nav>
                     {this.props.children}
                 </body>

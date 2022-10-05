@@ -8,14 +8,16 @@ class Index extends React.Component {
 
         const { coffees } = this.props
 
-        let { beans } = []
-        let { drinks } = []
+        let beans = []
+        let drinks = []
 
         for(let i of coffees){
+            console.log('hi')
+            console.log(i)
             if(i.roast){
-                beans.push(i)
+                beans.push(i);
             } else {
-                drinks.push(i)
+                drinks.push(i);
             }
         }
 
@@ -25,36 +27,16 @@ class Index extends React.Component {
                     <div id='coffee-selection'>
                         {beans.map((coffee) => {
                                 return (
-                                    <div id={`${coffee.type}.jpg`} className='coffee-type'>
-                                        <img className = 'coffee-pics' src='/images/Mocha-Java.jpg'></img>
-                                        <p className='coffee-name'>Mocha Java</p>
-                                    </div>
+                                    <a href={`/${coffee._id}`} id={`${coffee.type}`} className='coffee-type'>
+                                        <img className = 'coffee-pics' src={`/images/${coffee.type}.jpg`}></img>
+                                        <p className='coffee-name'>{coffee.type}</p>
+                                    </a>
                                 )
                         })}
-                        <div id='Mocha-Java' className='coffee-type'>
-                            <img className = 'coffee-pics' src='/images/Mocha-Java.jpg'></img>
-                            <p className='coffee-name'>Mocha Java</p>
-                        </div>
-                        <div id='Sumatra' className='coffee-type'>
-                            <img className = 'coffee-pics' src='/images/Sumatra.jpg'></img>
-                            <p className='coffee-name'>Sumatra</p>
-                        </div>
-                        <div id='Colombian' className='coffee-type'>
-                            <img className = 'coffee-pics' src='/images/Colombian.jpg'></img>
-                            <p className='coffee-name'>Colombian</p>
-                        </div>
-                        <div id='Guatemala' className='coffee-type'>
-                            <img className = 'coffee-pics' src='/images/Guatemala.jpg'></img>
-                            <p className='coffee-name'>Guatemala</p>
-                        </div>
-                        <div id='Espresso' className='coffee-type'>
-                            <img className = 'coffee-pics' src='/images/Espresso.jpg'></img>
-                            <p className='coffee-name'>Espresso</p>
-                        </div>
                     </div>
 
                     <nav>
-                        <a href="/coffee/new">Order a Drink</a>
+                        <a className = 'navigation' href="/coffee/new">Order a Drink</a>
                     </nav>
             </DefaultLayout>
         )

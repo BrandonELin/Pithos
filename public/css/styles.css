@@ -41,7 +41,7 @@ nav{
     margin-top: 3vh;
 }
 
-a{
+.navigation{
     background-color: maroon;
     color: white;
     padding: 2vh 3vh;

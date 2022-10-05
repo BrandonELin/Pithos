@@ -20,44 +20,21 @@ class Show extends React.Component {
                     </div>
     
                     <button>
-                        <a href={`/logs/${log._id}/edit`}>Edit</a>
+                        <a href={`/${coffee._id}/edit`}>Edit</a>
                     </button>
     
-                    <form action={`/logs/${log._id}?_method=DELETE`} method="POST">
+                    <form action={`/${coffee._id}?_method=DELETE`} method="POST">
                         <input type="submit" value="Delete" />
                     </form>
     
                     <nav>
-                        <a href="/logs">Back</a>
+                        <a href="/">Back</a>
                     </nav>
                 </DefaultLayout>
             ) 
         } else {
             let descriptor = `${coffee.type}`
         }
-
-        return (
-            <DefaultLayout title={`${log.type} details`} >
-                <p>
-                    {descriptor}
-                </p>
-                <p>
-                    {log.shipIsBroken ? "The ship is broken" : "The ship is okay"}
-                </p>
-
-                <button>
-                    <a href={`/logs/${log._id}/edit`}>Edit</a>
-                </button>
-
-                <form action={`/logs/${log._id}?_method=DELETE`} method="POST">
-                    <input type="submit" value="Delete" />
-                </form>
-
-                <nav>
-                    <a href="/logs">Back</a>
-                </nav>
-            </DefaultLayout>
-        )
     }
 }
 
