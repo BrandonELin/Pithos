@@ -8,9 +8,9 @@ const Schema = mongoose.Schema
 const coffeeSchema = new Schema({
     type: { type: String, required: true }, 
     roast: { type: String},
-    quantity: {type: String, required: true}, 
     wholeBean: {type: Boolean}, 
-    type: { type: String, required: true }
+    description: {type: String}, 
+    quantity: { type: Number}
 }
 )
 

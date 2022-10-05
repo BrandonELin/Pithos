@@ -6,12 +6,31 @@ class Index extends React.Component {
 
     render() {
 
-        const { coffee } = this.props
+        const { coffees } = this.props
+
+        let { beans } = []
+        let { drinks } = []
+
+        for(let i of coffees){
+            if(i.roast){
+                beans.push(i)
+            } else {
+                drinks.push(i)
+            }
+        }
 
         return (
             <DefaultLayout title="eXpresso">
                     <div id='page-top'><b>Welcome to eXpresso</b></div>
                     <div id='coffee-selection'>
+                        {beans.map((coffee) => {
+                                return (
+                                    <div id={`${coffee.type}.jpg`} className='coffee-type'>
+                                        <img className = 'coffee-pics' src='/images/Mocha-Java.jpg'></img>
+                                        <p className='coffee-name'>Mocha Java</p>
+                                    </div>
+                                )
+                        })}
                         <div id='Mocha-Java' className='coffee-type'>
                             <img className = 'coffee-pics' src='/images/Mocha-Java.jpg'></img>
                             <p className='coffee-name'>Mocha Java</p>

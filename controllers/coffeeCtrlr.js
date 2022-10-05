@@ -35,12 +35,10 @@ router.post('/', (req, res) => {
 })
 
 router.get('/seed', (req, res) => {
-    Log.deleteMany({}, (err, deletedLogs) => {
+    Coffee.deleteMany({}, (err, deletedLogs) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            console.coffee('deleted data.')
-            console.coffee(seed)
             Log.create(seed, (err, createdLog) => {
                 if (err) {
                     res.status(400).json(err)
