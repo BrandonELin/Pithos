@@ -1,0 +1,40 @@
+body {
+    background-color: rgb(59, 59, 59);
+    font-family:'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif
+}
+
+#page-top{
+    background-color: brown;
+    padding: 3vh;
+    font-size: 4vh;
+}
+
+#coffee-selection{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.coffee-type{
+    background-color: brown;
+    height: 25vw;
+    width: 25vw;
+    margin: 2.5vw;
+}
+
+.coffee-pics{
+    width: 20vw;
+    margin: 2.5vw;
+}
+
+nav{
+    height: 5vh;
+    position: relative;
+    margin-top: 3vh;
+}
+
+a{
+    background-color: maroon;
+    color: white;
+    padding: 2vh 3vh;
+    text-decoration: none;
+}
