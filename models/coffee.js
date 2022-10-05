@@ -6,7 +6,7 @@ const Schema = mongoose.Schema
 
 // create our Schema
 const coffeeSchema = new Schema({
-    name: { type: String, required: true }, 
+    type: { type: String, required: true }, 
     roast: { type: String},
     quantity: {type: String, required: true}, 
     wholeBean: {type: Boolean}, 

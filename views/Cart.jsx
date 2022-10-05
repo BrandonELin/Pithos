@@ -6,13 +6,33 @@ class Cart extends React.Component {
 
     render() {
 
-        const { coffee } = this.props
+        const { coffees } = this.props
+
+        let { beans } = []
+        let { drinks } = []
+
+        for(let i of coffees){
+            if(i.roast){
+                beans.push()
+            } else {
+                drinks.push()
+            }
+        }
 
         return (
-            <DefaultLayout title="Captains coffee">
-                    <h1>Coffee Beans</h1>
+            <DefaultLayout title="Cart">
+                    <h1>Coffee</h1>
                     <ul id="coffee-Cart">
-                        {coffee.map((coffee) => {
+                        {beans.map((coffee) => {
+                            return (
+                                <li key={coffee._id}>
+                                    <img src = {`/images/${coffee.type}.jpg`}></img>
+                                </li>
+                            )
+                        })}
+                    </ul>
+                    <ul id="coffee-Cart">
+                        {drinks.map((coffee) => {
                             return (
                                 <li key={coffee._id}>
                                     Captain's Log: <a href={`/coffee/${coffee._id}`}>{coffee.title}</a><br></br>  {coffee.entry}.

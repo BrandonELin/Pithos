@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
 app.use(methodOverride("_method"))
 
-app.use('/coffee', coffeeController)
+app.use('/', coffeeController)
 
 app.listen(port, () => console.log('Listening on port: ', port))
 
