@@ -20,6 +20,10 @@ app.use(methodOverride("_method"))
 
 app.use('/', musicController)
 
+app.get('/',(req,res) => {
+    res.redirect("/INDEXHERE")
+})
+
 app.listen(port, () => console.log('Listening on port: ', port))
 
 mongoConfig()
