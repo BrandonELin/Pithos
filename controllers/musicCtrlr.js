@@ -1,43 +1,36 @@
-const Music = require('../models/coffee')
+const Music = require('../models/music')
 const seed = require('../models/seed')
 
-const express = require('express')
-
 const findAllMusic = (req, res) => {  
-    coffeeLog.find({}, (err, foundLog) => {
+    Music.find({}, (err, foundMusic) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('Index', { coffees: foundLog })
+            res.status(200).render('Index', { music: foundMusic })
         }
     })
 }
 
 const showNewView = (req, res) => {     
     res.render('New')
-})
+}
 
 const createNewMusic = (req, res) => {
-    if (req.body.wholeBean === "on") {
-        req.body.wholeBean = true
-    } else {
-        req.body.wholeBean = false
-    }
-    Log.create(req.body, (err, createdLog) => {
+    Music.create(req.body, (err, createdMusic) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).redirect(`/${req.params.id}/Thanks`)
+            res.status(200).redirect(`/`)
         }
     })
 }
 
 const seedStarterData = (req, res) => {
-    coffeeLog.deleteMany({}, (err, deletedSelections) => {
+    Music.deleteMany({}, (err, deletedSelections) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            coffeeLog.create(seed, (err, createdSelections) => {
+            Music.create(seed, (err, createdSelections) => {
                 if (err) {
                     res.status(400).json(err)
                 } else {
@@ -48,29 +41,49 @@ const seedStarterData = (req, res) => {
     })
 }
 
-const showOneMusic = (req, res) => {
-    coffeeLog.findById(req.params.id, (err, foundLog) => {
+const buyMusic = (req,res) => {
+    Music.findById(req.params.id, (err,currentSong) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('Show', { coffee: foundLog })
+            res.status(200).render('Thanks', {music: currentSong})
+        }
+    })
+}
+
+const thanksMusic = (req,res) => {
+    Music.findOneAndUpdate({_id: req.params.id},{$inc : {'quantity' : -1}}, (err, updatedProduct) => {
+        if (err){
+            res.status(400).json(err)
+        } else {
+            res.status(200).redirect(`/${req.params.id}/Thanks`)
+        }
+    })
+}
+
+const showOneMusic = (req, res) => {
+    Music.findById(req.params.id, (err, foundMusic) => {
+        if (err) {
+            res.status(400).json(err)
+        } else {
+            res.status(200).render('Show', { music: foundMusic })
         }
     })
 }
 
 const showEditView = (req, res) => {
-    Log.findById(req.params.id, (err, foundLog) => {
+    Music.findById(req.params.id, (err, foundMusic) => {
         if (err) {
             res.status(400).json(err)
         } else {
-            res.status(200).render('Edit', { coffee: foundLog })
+            res.status(200).render('Edit', { music: foundMusic })
         }
     })
 }
 
 const updateOneMusic = (req, res) => {
 
-    coffeeLog.findOneAndUpdate({_id: req.params.id},{$inc : {'quantity' : -1}}, (err, updatedMusic) => {
+    Music.findOneAndUpdate(req.params.id, req.body, (err, foundMusic) => {
         if (err){
             res.status(400).json(err)
         } else {
@@ -82,14 +95,14 @@ const updateOneMusic = (req, res) => {
 
 const deleteOneMusic = (req, res) => {
     
-    Log.findByIdAndDelete(req.params.id, (err, deletedLog) => {
+    Music.findByIdAndDelete(req.params.id, (err, deletedMusic) => {
         if (err) {
             res.status(400).json(err)
         } else {
             res.status(200).redirect('/')
         }
     })
-})
+}
 
 
 module.exports = { 
@@ -97,6 +110,8 @@ module.exports = {
     showNewView, 
     createNewMusic,
     seedStarterData,
+    buyMusic,
+    thanksMusic,
     showOneMusic,
     showEditView,
     updateOneMusic,

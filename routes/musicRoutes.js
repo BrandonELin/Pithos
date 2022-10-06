@@ -7,6 +7,8 @@ const {
     showNewView, 
     createNewMusic,
     seedStarterData,
+    buyMusic,
+    thanksMusic,
     showOneMusic,
     showEditView,
     updateOneMusic,
@@ -20,6 +22,10 @@ router.get('/new', showNewView)
 router.post('/', createNewMusic)
 
 router.get('/seed', seedStarterData)
+
+router.get('/:id/Thanks', buyMusic)
+
+router.put('/:id/Thanks', thanksMusic)
 
 router.get('/:id', showOneMusic)
 

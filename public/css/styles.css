@@ -9,12 +9,12 @@ body {
     font-size: 4vh;
 }
 
-#coffee-selection{
+#music-selection{
     display: flex;
     flex-wrap: wrap;
 }
 
-.coffee-type{
+.music-name{
     background-color: brown;
     height: 25vw;
     width: 25vw;
@@ -22,17 +22,16 @@ body {
     display:flex;
     flex-direction: column;
     align-items: center;
+    font-size: 3vh;
+    text-decoration: none;
+    color:black
 }
 
-.coffee-pics{
+.music-pics{
     max-width: 20vw;
     max-height: 30vh;
     margin: 2.5vw;
     margin-bottom: 1vw;
-}
-
-.coffee-name{
-    font-size: 3vh;
 }
 
 nav{
@@ -56,11 +55,11 @@ nav{
     padding: 3vh;
 }
 
-#coffee-pic{
+#music-pic{
     max-width: 30vw;
 }
 
-#coffee-desc{
+#music-desc{
     padding: 3vh;
 }
 
@@ -85,4 +84,28 @@ nav{
     background-color: brown;
     color: white;
     margin: 1vh;
+}
+
+#show-bar{
+    display: flex;
+    flex-direction: row;
+    text-decoration: none;
+}
+
+.show{
+    text-decoration: none;
+    background-color: maroon;
+    padding: 2vh;
+    color: white;
+}
+
+.show2{
+    text-decoration: none;
+    background-color: maroon;
+    color: white;
+    font-size: 3vh;
+}
+
+h1{
+    font-size: 5vh;
 }

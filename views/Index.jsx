@@ -14,9 +14,9 @@ class Index extends React.Component {
                     <div id='music-selection'>
                         {music.map((song) => {
                                 return (
-                                    <a href={`/${song._id}`} id={`${song.type}`} className='song-type'>
-                                        <img className = 'song-pics' src={`/images/${song.type}.jpg`}></img>
-                                        <p className='song-name'>{song.type}</p>
+                                    <a href={`/${song._id}`} id={`${song.name}`} className='music-name'>
+                                        <img className = 'music-pics' src={`/images/music-logo-design.jpg`}></img>
+                                        <p className='song-name'>{song.name}</p>
                                     </a>
                                 )
                         })}

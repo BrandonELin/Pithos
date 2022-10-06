@@ -1,7 +1,7 @@
 const musicLog = [
     {
         name: 'Anthem of Victory', 
-        genre: 'Clasical',
+        genre: 'Classical',
         quantity: 5
     },
     {
