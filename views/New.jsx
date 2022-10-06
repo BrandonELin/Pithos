@@ -1,12 +1,13 @@
 const React = require('react')
 const DefaultLayout = require('./layouts/DefaultLayout')
 
+
 class New extends React.Component {
     render() {
         return (
             <DefaultLayout title="New log">
                 <h1>New Page</h1>
-                <form action="/logs" method="POST">
+                <form action="/" method="POST">
 
                     <label htmlFor="title">Name:</label>
                     <input type="text" id="title" name="title" />

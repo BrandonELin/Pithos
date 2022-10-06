@@ -8,14 +8,16 @@ class Cart extends React.Component {
 
         const { coffees } = this.props
 
-        let { beans } = []
-        let { drinks } = []
+        let beans = []
+        let drinks = []
 
         for(let i of coffees){
+            console.log('hi')
+            console.log(i)
             if(i.roast){
-                beans.push()
+                beans.push(i);
             } else {
-                drinks.push()
+                drinks.push(i);
             }
         }
 
@@ -25,12 +27,14 @@ class Cart extends React.Component {
                     <ul id="coffee-Cart">
                         {beans.map((coffee) => {
                             return (
-                                <li key={coffee._id}>
-                                    <img src = {`/images/${coffee.type}.jpg`}></img>
+                                <li id = 'cart-item' key={coffee._id}>
+                                    <img className = 'coffee-pics' src={`/images/${coffee.type}.jpg`}></img>
+                                    <p className='coffee-name'>{coffee.type} ({coffee.wholeBean? 'Whole Bean':'Ground'})</p>
                                 </li>
                             )
                         })}
                     </ul>
+                    <h1>Drinks</h1>
                     <ul id="coffee-Cart">
                         {drinks.map((coffee) => {
                             return (

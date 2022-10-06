@@ -70,19 +70,3 @@ nav{
     z-index: 1;
     overflow: auto;
 }
-
-#type{
-    display: none;
-}
-#roast{
-    display: none;
-}
-
-#cart-item{
-    list-style: none;
-    display: flex;
-    flex-direction: row;
-    background-color: brown;
-    color: white;
-    margin: 1vh;
-}

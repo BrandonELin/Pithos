@@ -1,20 +1,18 @@
-const Log = require('../models/coffee')
-const mongoose = require('mongoose')
-const Schema = mongoose.Schema
-const coffeeSelectionSchema = new Schema({
-    type: { type: String, required: true }, 
-    roast: { type: String},
-    wholeBean: {type: Boolean}, 
-    description: {type: String}, 
-    quantity: { type: Number}
-}
-)
-const coffeeLog = mongoose.model('CoffeeLog', coffeeSelectionSchema)
-const seed = require('../models/seed')
-
 const express = require('express')
 
 const router = express.Router()
+
+const { 
+    findAllProducts, 
+    showNewView, 
+    createNewProduct,
+    seedStarterData,
+    showOneProduct,
+    showEditView,
+    updateOneProduct,
+    deleteOneProduct,
+    clearData
+} = require('../controllers/coffeeCtrlr')
 
 router.get('/', (req, res) => {  
     coffeeLog.find({}, (err, foundLog) => {
