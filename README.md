@@ -2,7 +2,7 @@
 https://pithos.cyclic.app/
 
 # What is Pithos?
-Pithos is a place where you can find music, listen to it and decide if it's write for you.
+Pithos is a place where you can find music, listen to it and decide if it's right for you.
 
 # Tech
 JS, React, CSS
