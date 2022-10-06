@@ -9,8 +9,8 @@ JS, React, CSS
 # How to use it
 * Clone the repository
 * install/create the following
-  *.env
-  *node packages:
+  * .env
+  * node packages:
     *express
     *request
     *express-react-views
@@ -18,9 +18,9 @@ JS, React, CSS
     *react-dom
     *method-override
     *mongoose
-*assign a mongodb address to your .env (assuming you have an account)
+* assign a mongodb address to your .env (assuming you have an account)
 
 # Future Plans
-*More Royalty Free Assets (Art/Music)
-*Cart system
+* More Royalty Free Assets (Art/Music)
+* Cart system
 
