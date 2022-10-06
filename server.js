@@ -3,7 +3,7 @@ const methodOverride = require('method-override')
 
 const mongoConfig = require('./config')
 
-const coffeeController = require('./controllers/coffeeCtrlr')
+const musicController = require('./routes/musicRoutes')
 
 require('dotenv').config()
 
@@ -18,7 +18,7 @@ app.use(express.urlencoded({extended:false}))
 app.use(express.static("public"))
 app.use(methodOverride("_method"))
 
-app.use('/', coffeeController)
+app.use('/', musicController)
 
 app.listen(port, () => console.log('Listening on port: ', port))
 

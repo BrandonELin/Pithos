@@ -6,37 +6,24 @@ class Index extends React.Component {
 
     render() {
 
-        const { coffees } = this.props
-
-        let beans = []
-        let drinks = []
-
-        for(let i of coffees){
-            console.log('hi')
-            console.log(i)
-            if(i.roast){
-                beans.push(i);
-            } else {
-                drinks.push(i);
-            }
-        }
+        const { music } = this.props
 
         return (
-            <DefaultLayout title="eXpresso">
-                    <div id='page-top'><b>Welcome to eXpresso</b></div>
-                    <div id='coffee-selection'>
-                        {beans.map((coffee) => {
+            <DefaultLayout title="Pithos">
+                    <div id='page-top'><b>Welcome to Pithos</b></div>
+                    <div id='music-selection'>
+                        {music.map((song) => {
                                 return (
-                                    <a href={`/${coffee._id}`} id={`${coffee.type}`} className='coffee-type'>
-                                        <img className = 'coffee-pics' src={`/images/${coffee.type}.jpg`}></img>
-                                        <p className='coffee-name'>{coffee.type}</p>
+                                    <a href={`/${song._id}`} id={`${song.type}`} className='song-type'>
+                                        <img className = 'song-pics' src={`/images/${song.type}.jpg`}></img>
+                                        <p className='song-name'>{song.type}</p>
                                     </a>
                                 )
                         })}
                     </div>
 
                     <nav>
-                        <a className = 'navigation' href="/coffee/new">Order a Drink</a>
+                        <a className = 'navigation' href="/new">Write a Song</a>
                     </nav>
             </DefaultLayout>
         )

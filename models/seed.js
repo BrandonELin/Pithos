@@ -1,34 +1,34 @@
-const coffeeLog = [
+const musicLog = [
     {
-        type: 'Mocha-Java', 
-        roast: 'City Roast',
-        description: 'A coffee blend of Mocha and Java Arabica Coffee beans. Said to be one of the oldest coffee blends. Good body with notes of spice and fruit.', 
+        name: 'Anthem of Victory', 
+        genre: 'Clasical',
         quantity: 5
     },
     {
-        type: 'Espresso', 
-        roast: 'Espresso Roast',
-        description: 'A perfect roast for an Espresso. Bright and Tangy with notes of Citrus', 
+        name: 'Cinematic Documentary', 
+        genre: 'Soft Rock',
         quantity: 3
     },
     {
-        type: 'Colombian', 
-        roast: 'Medium Roast',
-        description: 'Notes of Brown sugar to give it a sweet and bright yet full bodied taste', 
+        name: 'Guitar Electro Sport Trailer', 
+        genre: 'Electric',
         quantity: 2
     },
     {
-        type: 'Guatemala', 
-        roast: 'City Roast',
-        description: 'Bright acidity with notes of chocolate and caramel', 
-        quantity: 3
+        name: 'King Around Here', 
+        genre: 'Rock',
+        quantity: 4
     },
     {
-        type: 'Sumatra', 
-        roast: 'Full City Roast',
-        description: 'Low acidity with a heavy and syrupy body. Notes of milk chocolate.', 
+        name: 'Stomping Rock (Four Shots)', 
+        genre: 'Rock',
         quantity: 2
+    },
+    {
+        name: 'Tuesday Glitch', 
+        genre: 'Electric',
+        quantity: 1
     }
 ];
 
-module.exports = coffeeLog
+module.exports = musicLog
