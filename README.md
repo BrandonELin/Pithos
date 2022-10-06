@@ -1,12 +1,12 @@
 # Pithos
 
-#What is Pithos?
+# What is Pithos?
 Pithos is a place where you can find music, listen to it and decide if it's write for you.
 
-#Tech
+# Tech
 JS, React, CSS
 
-#How to use it
+# How to use it
 * Clone the repository
 * install/create the following
   *.env
@@ -20,7 +20,7 @@ JS, React, CSS
     *mongoose
 *assign a mongodb address to your .env (assuming you have an account)
 
-#Future Plans
+# Future Plans
 *More Royalty Free Assets (Art/Music)
 *Cart system
 
