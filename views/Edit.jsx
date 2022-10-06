@@ -19,7 +19,7 @@ class Edit extends React.Component {
                         <option value="Soft Rock">Soft Rock</option>
                         <option value="Rock">Rock</option>
                         <option value="Hard Rock">Hard Rock</option>
-                        <option value="Liquid Rock">Squishy Rock</option>
+                        <option value="Liquid Rock">Liquid Rock</option>
                         <option value="Electric">Electric</option>
                         <option value="Classical">Classical</option>
                         <option value="Jazz">Jazz</option>
